@@ -4,7 +4,7 @@
 
 ## example
 ```js
-import jsonParse from 'json-parser'
+import jsonParse from '@zyrong/json-parser'
 
 const json = `{
   "array": [
@@ -61,7 +61,7 @@ interface SimpleNode {
 
 ## 错误json提示
 ```js
-import jsonParse from 'json-parser'
+import jsonParse from '@zyrong/json-parser'
 
 const json = `{"key":"value",}`  // 多了一个尾部逗号
 const visitor = jsonParse(json) // 抛出异常
@@ -95,7 +95,7 @@ const selectedString = packageJson.slice(range.start, range.end+1) // ts-node
 // -------------------
 
 
-import jsonParse from 'json-parser'
+import jsonParse from '@zyrong/json-parser'
 const visitor = jsonParse(packageJson)
 const node = visitor.get('dependencies')
 const depRange = node.value.range

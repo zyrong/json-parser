@@ -1,5 +1,5 @@
 {
-  "name": "json-parser",
+  "name": "@zyrong/json-parser",
   "version": "0.1.0",
   "private": false,
   "description": "json parser",
@@ -12,7 +12,7 @@
     "test": "jest",
     "changeset": "changeset",
     "ci:version": "changeset version",
-    "ci:publish": "pnpm run build && pnpm run test && pnpm publish --no-git-checks"
+    "ci:publish": "pnpm run build && pnpm run test && pnpm publish --access public --no-git-checks"
   },
   "keywords": [
     "json",
