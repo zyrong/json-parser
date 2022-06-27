@@ -1,5 +1,7 @@
-.vscode
+.vscode/*
+!.vscode/launch.json
 dist
 node_modules
 .pnpm-debug.log
 pnpm-lock.yaml
+coverage

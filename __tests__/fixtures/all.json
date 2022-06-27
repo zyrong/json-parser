@@ -1,0 +1,24 @@
+{
+  "empty_string": "",
+  "string": "string",
+  "\"":"\"",
+  "number": 0,
+  "null": null,
+  "false":false,
+  "true": true,
+  "array": [],
+  "object": {},
+  "deep": [
+    {
+      "empty_string": "",
+      "string": "string",
+      "\"":"\"",
+      "number": 0,
+      "null": null,
+      "false":false,
+      "true": true
+    },
+    [1,"2",null,false,true],
+    1,"2",null,false,true
+  ]
+}
