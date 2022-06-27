@@ -10,6 +10,7 @@
     "build": "rimraf ./dist && microbundle",
     "dev": "microbundle watch",
     "test": "jest",
+    "changeset": "changeset",
     "ci:version": "changeset version",
     "ci:publish": "pnpm run build && pnpm run test && pnpm publish -r --no-git-checks"
   },
