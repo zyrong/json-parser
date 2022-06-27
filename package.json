@@ -12,7 +12,7 @@
     "test": "jest",
     "changeset": "changeset",
     "ci:version": "changeset version",
-    "ci:publish": "pnpm run build && pnpm run test && pnpm publish -r --no-git-checks"
+    "ci:publish": "pnpm run build && pnpm run test && pnpm publish --no-git-checks"
   },
   "keywords": [
     "json",
