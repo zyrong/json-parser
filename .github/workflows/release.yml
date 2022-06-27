@@ -7,6 +7,8 @@ on:
     paths-ignore: # 下列文件的变更不触发
       - README.md
       - LICENSE
+      - .github/**
+      - __tests__/**
 
 env:
   CI: true
