@@ -1,5 +1,5 @@
-# JsonParser
-解析json字符串  
+# JsonParser  ![](https://badgen.net/npm/v/@zyrong/json-parser)  ![](https://badgen.net/badge/types/included/blue) ![](https://badgen.net/npm/dt/@zyrong/json-parser) ![](https://badgen.net/badge/language/typescript/blue)
+将json字符串解析为 [Node](https://github.com/zyrong/json-parser#node%E5%AE%9A%E4%B9%89) Tree  
 <br/>
 
 ## example
@@ -15,6 +15,66 @@ const visitor = jsonParse(json)
 
 console.log(visitor.body) // 根node
 
+// 对应的Node Tree 如下:
+{
+  "key": null,
+  "parent": null,
+  "properties":  [
+     {
+      "key":  {
+        "range":  {
+          "end": 11,
+          "start": 7
+        },
+        "value": "array"
+      },
+      "parent": ["Circular"],
+      "properties":  [
+         {
+          "key": 0,
+          "parent": ["Circular"],
+          "type": "string",
+          "value":  {
+            "code": "string",
+            "range":  {
+              "end": 29,
+              "start": 24
+            }
+          }
+        },
+         {
+          "key": 1,
+          "parent": ["Circular"],
+          "type": "number",
+          "value":  {
+            "code": "123",
+            "range":  {
+              "end": 35,
+              "start": 33
+            }
+          }
+        }
+      ],
+      "type": "array",
+      "value":  {
+        "code": "[\"string\", 123]",
+        "range":  {
+          "end": 41,
+          "start": 15
+        }
+      }
+    }
+  ],
+  "type": "object",
+  "value":  {
+    "code": "{ \"array\": [\"string\", 123] }",
+    "range":  {
+      "end": 45,
+      "start": 0
+    }
+  }
+}
+
 
 // 字符串索引路径访问node
 console.log(visitor.get('array.0').value.code); // output: 'string'
@@ -24,7 +84,6 @@ console.log(visitor.get('xxx').value.code);     // output: undefined
 
 // 返回根node
 console.log(visitor.get('') === visitor.body);  // output: true
-
 ```  
 <br/>
 
