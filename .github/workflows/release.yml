@@ -34,10 +34,12 @@ jobs:
         run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > .npmrc
       - name: setup pnpm config
         run: pnpm config set store-dir $PNPM_CACHE_FOLDER
-      - name: change registry
+      - name: install registry
         run: pnpm config set registry https://registry.npmmirror.com
       - name: install dependencies
         run: pnpm install
+      - name: publish registry
+        run: pnpm config set registry https://registry.npmjs.org/m
       - name: create and publish versions
         uses: changesets/action@v1
         with:
