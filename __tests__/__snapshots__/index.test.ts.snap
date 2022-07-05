@@ -3,517 +3,387 @@
 exports[`fixtures test all.json 1`] = `
 Object {
   "key": null,
+  "keyRange": null,
   "parent": null,
   "properties": Array [
     Object {
-      "key": Object {
-        "range": Object {
-          "end": 16,
-          "start": 5,
-        },
-        "value": "empty_string",
+      "key": "empty_string",
+      "keyRange": Object {
+        "end": 16,
+        "start": 5,
       },
       "parent": [Circular],
       "type": "string",
-      "value": Object {
-        "code": "",
-        "range": Object {
-          "end": 20,
-          "start": 21,
-        },
+      "value": "",
+      "valueRange": Object {
+        "end": 20,
+        "start": 21,
       },
     },
     Object {
-      "key": Object {
-        "range": Object {
-          "end": 32,
-          "start": 27,
-        },
-        "value": "string",
+      "key": "string",
+      "keyRange": Object {
+        "end": 32,
+        "start": 27,
       },
       "parent": [Circular],
       "type": "string",
-      "value": Object {
-        "code": "string",
-        "range": Object {
-          "end": 42,
-          "start": 37,
-        },
+      "value": "string",
+      "valueRange": Object {
+        "end": 42,
+        "start": 37,
       },
     },
     Object {
-      "key": Object {
-        "range": Object {
-          "end": 50,
-          "start": 49,
-        },
-        "value": "\\\\\\"",
+      "key": "\\\\\\"",
+      "keyRange": Object {
+        "end": 50,
+        "start": 49,
       },
       "parent": [Circular],
       "type": "string",
-      "value": Object {
-        "code": "\\\\\\"",
-        "range": Object {
-          "end": 55,
-          "start": 54,
-        },
+      "value": "\\\\\\"",
+      "valueRange": Object {
+        "end": 55,
+        "start": 54,
       },
     },
     Object {
-      "key": Object {
-        "range": Object {
-          "end": 67,
-          "start": 62,
-        },
-        "value": "number",
+      "key": "number",
+      "keyRange": Object {
+        "end": 67,
+        "start": 62,
       },
       "parent": [Circular],
       "type": "number",
-      "value": Object {
-        "code": "0",
-        "range": Object {
-          "end": 71,
-          "start": 71,
-        },
+      "value": "0",
+      "valueRange": Object {
+        "end": 71,
+        "start": 71,
       },
     },
     Object {
-      "key": Object {
-        "range": Object {
-          "end": 80,
-          "start": 77,
-        },
-        "value": "null",
+      "key": "null",
+      "keyRange": Object {
+        "end": 80,
+        "start": 77,
       },
       "parent": [Circular],
       "type": "null",
-      "value": Object {
-        "code": "null",
-        "range": Object {
-          "end": 87,
-          "start": 84,
-        },
+      "value": "null",
+      "valueRange": Object {
+        "end": 87,
+        "start": 84,
       },
     },
     Object {
-      "key": Object {
-        "range": Object {
-          "end": 97,
-          "start": 93,
-        },
-        "value": "false",
+      "key": "false",
+      "keyRange": Object {
+        "end": 97,
+        "start": 93,
       },
       "parent": [Circular],
       "type": "boolean",
-      "value": Object {
-        "code": "false",
-        "range": Object {
-          "end": 104,
-          "start": 100,
-        },
+      "value": "false",
+      "valueRange": Object {
+        "end": 104,
+        "start": 100,
       },
     },
     Object {
-      "key": Object {
-        "range": Object {
-          "end": 113,
-          "start": 110,
-        },
-        "value": "true",
+      "key": "true",
+      "keyRange": Object {
+        "end": 113,
+        "start": 110,
       },
       "parent": [Circular],
       "type": "boolean",
-      "value": Object {
-        "code": "true",
-        "range": Object {
-          "end": 120,
-          "start": 117,
-        },
+      "value": "true",
+      "valueRange": Object {
+        "end": 120,
+        "start": 117,
       },
     },
     Object {
-      "key": Object {
-        "range": Object {
-          "end": 130,
-          "start": 126,
-        },
-        "value": "array",
+      "key": "array",
+      "keyRange": Object {
+        "end": 130,
+        "start": 126,
       },
       "parent": [Circular],
       "properties": Array [],
       "type": "array",
-      "value": Object {
-        "code": "[]",
-        "range": Object {
-          "end": 135,
-          "start": 134,
-        },
+      "valueRange": Object {
+        "end": 135,
+        "start": 134,
       },
     },
     Object {
-      "key": Object {
-        "range": Object {
-          "end": 146,
-          "start": 141,
-        },
-        "value": "object",
+      "key": "object",
+      "keyRange": Object {
+        "end": 146,
+        "start": 141,
       },
       "parent": [Circular],
       "properties": Array [],
       "type": "object",
-      "value": Object {
-        "code": "{}",
-        "range": Object {
-          "end": 151,
-          "start": 150,
-        },
+      "valueRange": Object {
+        "end": 151,
+        "start": 150,
       },
     },
     Object {
-      "key": Object {
-        "range": Object {
-          "end": 160,
-          "start": 157,
-        },
-        "value": "deep",
+      "key": "deep",
+      "keyRange": Object {
+        "end": 160,
+        "start": 157,
       },
       "parent": [Circular],
       "properties": Array [
         Object {
           "key": 0,
+          "keyRange": null,
           "parent": [Circular],
           "properties": Array [
             Object {
-              "key": Object {
-                "range": Object {
-                  "end": 190,
-                  "start": 179,
-                },
-                "value": "empty_string",
+              "key": "empty_string",
+              "keyRange": Object {
+                "end": 190,
+                "start": 179,
               },
               "parent": [Circular],
               "type": "string",
-              "value": Object {
-                "code": "",
-                "range": Object {
-                  "end": 194,
-                  "start": 195,
-                },
+              "value": "",
+              "valueRange": Object {
+                "end": 194,
+                "start": 195,
               },
             },
             Object {
-              "key": Object {
-                "range": Object {
-                  "end": 210,
-                  "start": 205,
-                },
-                "value": "string",
+              "key": "string",
+              "keyRange": Object {
+                "end": 210,
+                "start": 205,
               },
               "parent": [Circular],
               "type": "string",
-              "value": Object {
-                "code": "string",
-                "range": Object {
-                  "end": 220,
-                  "start": 215,
-                },
+              "value": "string",
+              "valueRange": Object {
+                "end": 220,
+                "start": 215,
               },
             },
             Object {
-              "key": Object {
-                "range": Object {
-                  "end": 232,
-                  "start": 231,
-                },
-                "value": "\\\\\\"",
+              "key": "\\\\\\"",
+              "keyRange": Object {
+                "end": 232,
+                "start": 231,
               },
               "parent": [Circular],
               "type": "string",
-              "value": Object {
-                "code": "\\\\\\"",
-                "range": Object {
-                  "end": 237,
-                  "start": 236,
-                },
+              "value": "\\\\\\"",
+              "valueRange": Object {
+                "end": 237,
+                "start": 236,
               },
             },
             Object {
-              "key": Object {
-                "range": Object {
-                  "end": 253,
-                  "start": 248,
-                },
-                "value": "number",
+              "key": "number",
+              "keyRange": Object {
+                "end": 253,
+                "start": 248,
               },
               "parent": [Circular],
               "type": "number",
-              "value": Object {
-                "code": "0",
-                "range": Object {
-                  "end": 257,
-                  "start": 257,
-                },
+              "value": "0",
+              "valueRange": Object {
+                "end": 257,
+                "start": 257,
               },
             },
             Object {
-              "key": Object {
-                "range": Object {
-                  "end": 270,
-                  "start": 267,
-                },
-                "value": "null",
+              "key": "null",
+              "keyRange": Object {
+                "end": 270,
+                "start": 267,
               },
               "parent": [Circular],
               "type": "null",
-              "value": Object {
-                "code": "null",
-                "range": Object {
-                  "end": 277,
-                  "start": 274,
-                },
+              "value": "null",
+              "valueRange": Object {
+                "end": 277,
+                "start": 274,
               },
             },
             Object {
-              "key": Object {
-                "range": Object {
-                  "end": 291,
-                  "start": 287,
-                },
-                "value": "false",
+              "key": "false",
+              "keyRange": Object {
+                "end": 291,
+                "start": 287,
               },
               "parent": [Circular],
               "type": "boolean",
-              "value": Object {
-                "code": "false",
-                "range": Object {
-                  "end": 298,
-                  "start": 294,
-                },
+              "value": "false",
+              "valueRange": Object {
+                "end": 298,
+                "start": 294,
               },
             },
             Object {
-              "key": Object {
-                "range": Object {
-                  "end": 311,
-                  "start": 308,
-                },
-                "value": "true",
+              "key": "true",
+              "keyRange": Object {
+                "end": 311,
+                "start": 308,
               },
               "parent": [Circular],
               "type": "boolean",
-              "value": Object {
-                "code": "true",
-                "range": Object {
-                  "end": 318,
-                  "start": 315,
-                },
+              "value": "true",
+              "valueRange": Object {
+                "end": 318,
+                "start": 315,
               },
             },
           ],
           "type": "object",
-          "value": Object {
-            "code": "{
-      \\"empty_string\\": \\"\\",
-      \\"string\\": \\"string\\",
-      \\"\\\\\\"\\":\\"\\\\\\"\\",
-      \\"number\\": 0,
-      \\"null\\": null,
-      \\"false\\":false,
-      \\"true\\": true
-    }",
-            "range": Object {
-              "end": 324,
-              "start": 170,
-            },
+          "valueRange": Object {
+            "end": 324,
+            "start": 170,
           },
         },
         Object {
           "key": 1,
+          "keyRange": null,
           "parent": [Circular],
           "properties": Array [
             Object {
               "key": 0,
+              "keyRange": null,
               "parent": [Circular],
               "type": "number",
-              "value": Object {
-                "code": "1",
-                "range": Object {
-                  "end": 332,
-                  "start": 332,
-                },
+              "value": "1",
+              "valueRange": Object {
+                "end": 332,
+                "start": 332,
               },
             },
             Object {
               "key": 1,
+              "keyRange": null,
               "parent": [Circular],
               "type": "string",
-              "value": Object {
-                "code": "2",
-                "range": Object {
-                  "end": 335,
-                  "start": 335,
-                },
+              "value": "2",
+              "valueRange": Object {
+                "end": 335,
+                "start": 335,
               },
             },
             Object {
               "key": 2,
+              "keyRange": null,
               "parent": [Circular],
               "type": "null",
-              "value": Object {
-                "code": "null",
-                "range": Object {
-                  "end": 341,
-                  "start": 338,
-                },
+              "value": "null",
+              "valueRange": Object {
+                "end": 341,
+                "start": 338,
               },
             },
             Object {
               "key": 3,
+              "keyRange": null,
               "parent": [Circular],
               "type": "boolean",
-              "value": Object {
-                "code": "false",
-                "range": Object {
-                  "end": 347,
-                  "start": 343,
-                },
+              "value": "false",
+              "valueRange": Object {
+                "end": 347,
+                "start": 343,
               },
             },
             Object {
               "key": 4,
+              "keyRange": null,
               "parent": [Circular],
               "type": "boolean",
-              "value": Object {
-                "code": "true",
-                "range": Object {
-                  "end": 352,
-                  "start": 349,
-                },
+              "value": "true",
+              "valueRange": Object {
+                "end": 352,
+                "start": 349,
               },
             },
           ],
           "type": "array",
-          "value": Object {
-            "code": "[1,\\"2\\",null,false,true]",
-            "range": Object {
-              "end": 353,
-              "start": 331,
-            },
+          "valueRange": Object {
+            "end": 353,
+            "start": 331,
           },
         },
         Object {
           "key": 2,
+          "keyRange": null,
           "parent": [Circular],
           "type": "number",
-          "value": Object {
-            "code": "1",
-            "range": Object {
-              "end": 360,
-              "start": 360,
-            },
+          "value": "1",
+          "valueRange": Object {
+            "end": 360,
+            "start": 360,
           },
         },
         Object {
           "key": 3,
+          "keyRange": null,
           "parent": [Circular],
           "type": "string",
-          "value": Object {
-            "code": "2",
-            "range": Object {
-              "end": 363,
-              "start": 363,
-            },
+          "value": "2",
+          "valueRange": Object {
+            "end": 363,
+            "start": 363,
           },
         },
         Object {
           "key": 4,
+          "keyRange": null,
           "parent": [Circular],
           "type": "null",
-          "value": Object {
-            "code": "null",
-            "range": Object {
-              "end": 369,
-              "start": 366,
-            },
+          "value": "null",
+          "valueRange": Object {
+            "end": 369,
+            "start": 366,
           },
         },
         Object {
           "key": 5,
+          "keyRange": null,
           "parent": [Circular],
           "type": "boolean",
-          "value": Object {
-            "code": "false",
-            "range": Object {
-              "end": 375,
-              "start": 371,
-            },
+          "value": "false",
+          "valueRange": Object {
+            "end": 375,
+            "start": 371,
           },
         },
         Object {
           "key": 6,
+          "keyRange": null,
           "parent": [Circular],
           "type": "boolean",
-          "value": Object {
-            "code": "true",
-            "range": Object {
-              "end": 380,
-              "start": 377,
-            },
+          "value": "true",
+          "valueRange": Object {
+            "end": 380,
+            "start": 377,
           },
         },
       ],
       "type": "array",
-      "value": Object {
-        "code": "[
-    {
-      \\"empty_string\\": \\"\\",
-      \\"string\\": \\"string\\",
-      \\"\\\\\\"\\":\\"\\\\\\"\\",
-      \\"number\\": 0,
-      \\"null\\": null,
-      \\"false\\":false,
-      \\"true\\": true
-    },
-    [1,\\"2\\",null,false,true],
-    1,\\"2\\",null,false,true
-  ]",
-        "range": Object {
-          "end": 384,
-          "start": 164,
-        },
+      "valueRange": Object {
+        "end": 384,
+        "start": 164,
       },
     },
   ],
   "type": "object",
-  "value": Object {
-    "code": "{
-  \\"empty_string\\": \\"\\",
-  \\"string\\": \\"string\\",
-  \\"\\\\\\"\\":\\"\\\\\\"\\",
-  \\"number\\": 0,
-  \\"null\\": null,
-  \\"false\\":false,
-  \\"true\\": true,
-  \\"array\\": [],
-  \\"object\\": {},
-  \\"deep\\": [
-    {
-      \\"empty_string\\": \\"\\",
-      \\"string\\": \\"string\\",
-      \\"\\\\\\"\\":\\"\\\\\\"\\",
-      \\"number\\": 0,
-      \\"null\\": null,
-      \\"false\\":false,
-      \\"true\\": true
-    },
-    [1,\\"2\\",null,false,true],
-    1,\\"2\\",null,false,true
-  ]
-}",
-    "range": Object {
-      "end": 386,
-      "start": 0,
-    },
+  "valueRange": Object {
+    "end": 386,
+    "start": 0,
   },
 }
 `;
@@ -521,76 +391,69 @@ Object {
 exports[`fixtures test array.json 1`] = `
 Object {
   "key": null,
+  "keyRange": null,
   "parent": null,
   "properties": Array [
     Object {
       "key": 0,
+      "keyRange": null,
       "parent": [Circular],
       "type": "number",
-      "value": Object {
-        "code": "1",
-        "range": Object {
-          "end": 1,
-          "start": 1,
-        },
+      "value": "1",
+      "valueRange": Object {
+        "end": 1,
+        "start": 1,
       },
     },
     Object {
       "key": 1,
+      "keyRange": null,
       "parent": [Circular],
       "type": "string",
-      "value": Object {
-        "code": "2",
-        "range": Object {
-          "end": 4,
-          "start": 4,
-        },
+      "value": "2",
+      "valueRange": Object {
+        "end": 4,
+        "start": 4,
       },
     },
     Object {
       "key": 2,
+      "keyRange": null,
       "parent": [Circular],
       "type": "null",
-      "value": Object {
-        "code": "null",
-        "range": Object {
-          "end": 10,
-          "start": 7,
-        },
+      "value": "null",
+      "valueRange": Object {
+        "end": 10,
+        "start": 7,
       },
     },
     Object {
       "key": 3,
+      "keyRange": null,
       "parent": [Circular],
       "type": "boolean",
-      "value": Object {
-        "code": "false",
-        "range": Object {
-          "end": 16,
-          "start": 12,
-        },
+      "value": "false",
+      "valueRange": Object {
+        "end": 16,
+        "start": 12,
       },
     },
     Object {
       "key": 4,
+      "keyRange": null,
       "parent": [Circular],
       "type": "boolean",
-      "value": Object {
-        "code": "true",
-        "range": Object {
-          "end": 21,
-          "start": 18,
-        },
+      "value": "true",
+      "valueRange": Object {
+        "end": 21,
+        "start": 18,
       },
     },
   ],
   "type": "array",
-  "value": Object {
-    "code": "[1,\\"2\\",null,false,true]",
-    "range": Object {
-      "end": 22,
-      "start": 0,
-    },
+  "valueRange": Object {
+    "end": 22,
+    "start": 0,
   },
 }
 `;
@@ -598,14 +461,13 @@ Object {
 exports[`fixtures test boolean.json 1`] = `
 Object {
   "key": null,
+  "keyRange": null,
   "parent": null,
   "type": "boolean",
-  "value": Object {
-    "code": "false",
-    "range": Object {
-      "end": 4,
-      "start": 0,
-    },
+  "value": "false",
+  "valueRange": Object {
+    "end": 4,
+    "start": 0,
   },
 }
 `;
@@ -613,14 +475,13 @@ Object {
 exports[`fixtures test null.json 1`] = `
 Object {
   "key": null,
+  "keyRange": null,
   "parent": null,
   "type": "null",
-  "value": Object {
-    "code": "null",
-    "range": Object {
-      "end": 3,
-      "start": 0,
-    },
+  "value": "null",
+  "valueRange": Object {
+    "end": 3,
+    "start": 0,
   },
 }
 `;
@@ -628,14 +489,13 @@ Object {
 exports[`fixtures test number.json 1`] = `
 Object {
   "key": null,
+  "keyRange": null,
   "parent": null,
   "type": "number",
-  "value": Object {
-    "code": "123",
-    "range": Object {
-      "end": 2,
-      "start": 0,
-    },
+  "value": "123",
+  "valueRange": Object {
+    "end": 2,
+    "start": 0,
   },
 }
 `;
@@ -643,14 +503,13 @@ Object {
 exports[`fixtures test string.json 1`] = `
 Object {
   "key": null,
+  "keyRange": null,
   "parent": null,
   "type": "string",
-  "value": Object {
-    "code": "string",
-    "range": Object {
-      "end": 6,
-      "start": 1,
-    },
+  "value": "string",
+  "valueRange": Object {
+    "end": 6,
+    "start": 1,
   },
 }
 `;

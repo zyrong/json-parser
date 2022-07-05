@@ -1,5 +1,5 @@
-import { createRange, createError } from './util'
-import { NodeType, createComplexNode, createSimpleNode, ObjectKey } from './node'
+import { createRange, createError, CodeRange } from './util'
+import { NodeType, createComplexNode, createSimpleNode } from './node'
 import { Token, TokenTypes, CloseToken, FixedLiteralToken, StringToken, NumberToken, SquareBracketToken, CurlyBracketToken, createToken } from './token';
 import Visitor from './visitor'
 
@@ -18,22 +18,13 @@ const valueTokenStrategy = {
     return token.node
   },
   [TokenTypes.FixedLiteral]: function (token: FixedLiteralToken) {
-    const node = createSimpleNode(token.value !== 'null' ? 'boolean' : 'null')
-    node.value.code = token.value
-    node.value.range = token.range
-    return node
+    return createSimpleNode(token.value !== 'null' ? 'boolean' : 'null', token.value, token.range)
   },
   [TokenTypes.String]: function (token: StringToken) {
-    const node = createSimpleNode('string')
-    node.value.code = token.value
-    node.value.range = token.range
-    return node
+    return createSimpleNode('string', token.value, token.range)
   },
   [TokenTypes.Number]: function (token: NumberToken) {
-    const node = createSimpleNode('number')
-    node.value.code = token.value
-    node.value.range = token.range
-    return node
+    return createSimpleNode('number', token.value, token.range)
   }
 } as { [key in TokenTypes]: (token: Token) => NodeType }
 
@@ -46,15 +37,16 @@ function closeBracket(type: TokenTypes.SquareBracket | TokenTypes.CurlyBracket, 
 
   const complexNode = createComplexNode(type === TokenTypes.CurlyBracket ? 'object' : 'array')
   startToken.range.end = current
-  complexNode.value.range = startToken.range
-  complexNode.value.code = json.slice(complexNode.value.range.start, complexNode.value.range.end + 1);
-
+  complexNode.valueRange = startToken.range
 
   const betweenBracketsTokens = tokenStack.splice(idx, tokenStack.length - idx);
 
   if (type === TokenTypes.CurlyBracket) {
     const lastIdx = betweenBracketsTokens.length - 1
-    let keyInfo!: ObjectKey
+    let keyInfo!: {
+      value: string,
+      range: CodeRange
+    }
     for (let i = 1; i <= lastIdx; i++) {
       const token = betweenBracketsTokens[i]
       switch (i % 4) {
@@ -77,10 +69,10 @@ function closeBracket(type: TokenTypes.SquareBracket | TokenTypes.CurlyBracket, 
         case 3:
           if (valueTokenStrategy[token.type]) {
             const node: NodeType = valueTokenStrategy[token.type](token)
-            node.key = keyInfo
+            node.key = keyInfo.value
+            node.keyRange = keyInfo.range
             node.parent = complexNode
             complexNode.properties.push(node)
-            complexNode.properties[keyInfo.value] = node
           } else {
             createError(json, token.range.start)
           }

@@ -1,28 +1,22 @@
 import { CodeRange } from './util'
 
-type ObjectKey = {
-  value: string, // key对应的值
-  range: CodeRange // key在json中的范围
-}
-type NodeKey = ObjectKey | number
-
-type NodeValue = {
-  code: string, // value对应的字符串值
-  range: CodeRange, // value在json中的范围
-}
+type NodeKey = number | string | null
 
 type NodeType = ComplexNode | SimpleNode
 interface ComplexNode {
-  type: 'object' | 'array', // node数据类型
-  key: NodeKey | null, // value对应的key
-  value: NodeValue, // key对应的value
+  type: 'object' | 'array',   // node数据类型
+  key: NodeKey,               // key对应的值
+  keyRange: CodeRange | null, // key在json中的范围
+  valueRange: CodeRange,      // value对应的范围
   parent: ComplexNode | null, // parentNode。rootNode的parent为null
-  properties: Array<NodeType> & Record<string, NodeType> // childNodes
+  properties: Array<NodeType> // childNodes
 }
 interface SimpleNode {
   type: 'string' | 'number' | 'boolean' | 'null',
-  key: NodeKey | null,
-  value: NodeValue,
+  key: NodeKey,               // key对应的值
+  keyRange: CodeRange | null, // key在json中的范围
+  value: string,              // value对应的字符串值
+  valueRange: CodeRange,      // value在json中的范围
   parent: ComplexNode | null,
 }
 
@@ -31,25 +25,23 @@ function createComplexNode(type: 'object' | 'array'): ComplexNode {
   return {
     type,
     key: null,
-    value: {
-      code: '',
-      range: null
-    },
+    keyRange: null,
+    // @ts-ignore
+    valueRange: undefined,
     parent: null,
     properties: []
-  } as unknown as ComplexNode
+  }
 }
 
-function createSimpleNode(type: 'string' | 'number' | 'boolean' | 'null'): SimpleNode {
+function createSimpleNode(type: 'string' | 'number' | 'boolean' | 'null', value: string, valueRange: CodeRange): SimpleNode {
   return {
     type,
     key: null,
-    value: {
-      code: '',
-      range: null
-    },
+    keyRange: null,
+    value,
+    valueRange,
     parent: null,
-  } as unknown as SimpleNode
+  }
 }
 
 export {
@@ -58,5 +50,4 @@ export {
   ComplexNode,
   SimpleNode,
   NodeType,
-  ObjectKey
 }

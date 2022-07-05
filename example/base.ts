@@ -30,7 +30,7 @@ try {
 
   if (visitor) {
     const node = visitor.get('deep.0.string')
-    if (node) {
+    if (visitor.isSimpleNode(node)) {
       console.log(node.value.code);
     }
   }
