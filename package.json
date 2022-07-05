@@ -12,7 +12,7 @@
     "test": "jest",
     "changeset": "changeset",
     "ci:version": "changeset version",
-    "ci:publish": "pnpm run build && pnpm run test && pnpm publish --access public --no-git-checks"
+    "ci:publish": "pnpm run build && pnpm run test && pnpm publish --no-git-checks"
   },
   "keywords": [
     "json",
@@ -45,6 +45,7 @@
   },
   "author": "zyrong",
   "publishConfig": {
+    "access": "public",
     "registry": "https://registry.npmjs.org/"
   },
   "lint-staged": {
