@@ -18,62 +18,51 @@ console.log(visitor.body) // 根node
 // 对应的Node Tree 如下:
 {
   "key": null,
+  "type": "object",
+  "valueRange": {
+    "end": 45,
+    "start": 0
+  },
   "parent": null,
-  "properties":  [
-     {
-      "key":  {
-        "range":  {
-          "end": 11,
-          "start": 7
-        },
-        "value": "array"
+  "properties": [
+    {
+      "type": "array",
+      "key": "array",
+      "keyRange": {
+        "end": 11,
+        "start": 7
+      },
+      "valueRange": {
+        "end": 41,
+        "start": 15
       },
       "parent": ["Circular"],
-      "properties":  [
-         {
+      "properties": [
+        {
           "key": 0,
           "parent": ["Circular"],
           "type": "string",
-          "value":  {
-            "code": "string",
-            "range":  {
-              "end": 29,
-              "start": 24
-            }
+          "value": "string",
+          "valueRange": {
+            "end": 29,
+            "start": 24
           }
         },
-         {
+        {
           "key": 1,
           "parent": ["Circular"],
           "type": "number",
-          "value":  {
-            "code": "123",
-            "range":  {
-              "end": 35,
-              "start": 33
-            }
+          "value": "123",
+          "valueRange": {
+            "end": 35,
+            "start": 33
           }
         }
-      ],
-      "type": "array",
-      "value":  {
-        "code": "[\"string\", 123]",
-        "range":  {
-          "end": 41,
-          "start": 15
-        }
-      }
+      ]
     }
-  ],
-  "type": "object",
-  "value":  {
-    "code": "{ \"array\": [\"string\", 123] }",
-    "range":  {
-      "end": 45,
-      "start": 0
-    }
-  }
+  ]
 }
+
 
 
 // 字符串索引路径访问node
@@ -89,31 +78,27 @@ console.log(visitor.get('') === visitor.body);  // output: true
 
 ## Node定义
 ```ts
-type ObjectKey = {
-  value: string,    // key对应的值
-  range: CodeRange  // key在json中的范围
-}
-type NodeKey = ObjectKey | number
-
-type NodeValue = {
-  code: string,     // value对应的字符串值
-  range: CodeRange, // value在json中的范围
-}
+type NodeKey = number | string | null
 
 type NodeType = ComplexNode | SimpleNode
 interface ComplexNode {
   type: 'object' | 'array',   // node数据类型
-  key: NodeKey | null,        // value对应的key
-  value: NodeValue,           // key对应的value
+  key: NodeKey,               // key对应的值
+  keyRange: CodeRange | null, // key在json中的范围
+  valueRange: CodeRange,      // value对应的范围
   parent: ComplexNode | null, // parentNode。rootNode的parent为null
-  properties: Array<NodeType> & Record<string, NodeType> // childNodes
+  properties: Array<NodeType> // childNodes
 }
+
 interface SimpleNode {
   type: 'string' | 'number' | 'boolean' | 'null',
-  key: NodeKey | null,
-  value: NodeValue,
+  key: NodeKey,               // key对应的值
+  keyRange: CodeRange | null, // key在json中的范围
+  value: string,              // value对应的字符串值
+  valueRange: CodeRange,      // value在json中的范围
   parent: ComplexNode | null,
 }
+
 
 ```  
 <br/>
@@ -157,7 +142,7 @@ const selectedString = packageJson.slice(range.start, range.end+1) // ts-node
 import jsonParse from '@zyrong/json-parser'
 const visitor = jsonParse(packageJson)
 const node = visitor.get('dependencies')
-const depRange = node.value.range
+const depRange = node.valueRange
 if(range.start > depRange.start && range.end < depRange.end){
   console.log(selectedString+'在dependencies的范围内')
 }else{
