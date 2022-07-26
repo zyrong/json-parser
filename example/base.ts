@@ -1,6 +1,7 @@
-import jsonParse from "../src/index";
+import jsonParse, { isSimpleNode } from "../src/index";
 
 const json = `{
+  "": "empty_key",
   "empty_string": "",
   "string": "string",
   "number": 0,
@@ -30,8 +31,8 @@ try {
 
   if (visitor) {
     const node = visitor.get('deep.0.string')
-    if (visitor.isSimpleNode(node)) {
-      console.log(node.value.code);
+    if (isSimpleNode(node)) {
+      console.log(node.value);
     }
   }
 } catch (error) {

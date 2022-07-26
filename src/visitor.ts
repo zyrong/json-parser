@@ -1,23 +1,12 @@
-import { ComplexNode, NodeType, SimpleNode } from "./node";
-
-const ComplexType = ['array', 'object']
-const SimpleType = ['string', 'number', 'boolean', 'null']
+import { NodeType } from "./node";
 
 class Visitor {
   constructor(public body: NodeType) { }
 
-  isComplexNode(node: any): node is ComplexNode {
-    return node && ComplexType.includes(node.type)
-  }
+  get(keyPath?: string | string[]): NodeType | undefined {
+    if (keyPath === undefined) return this.body
 
-  isSimpleNode(node: any): node is SimpleNode {
-    return node && SimpleType.includes(node.type)
-  }
-
-  get(keyPath: string | string[]): NodeType | undefined {
     const path = Array.isArray(keyPath) ? keyPath : keyPath.trim().split('.')
-
-    if (path.length === 1 && path[0] === '') return this.body
 
     let node: NodeType | undefined = this.body
     for (let index = 0; index < path.length; index++) {

@@ -1,3 +1,5 @@
+import { ComplexNode, SimpleNode } from "./node"
+
 interface CodeRange {
   start: number,
   end: number
@@ -26,4 +28,14 @@ function createError(...args: any[]): never {
   }
 }
 
-export { CodeRange, createRange, createError }
+const ComplexType = ['array', 'object']
+function isComplexNode(node: any): node is ComplexNode {
+  return node && ComplexType.includes(node.type)
+}
+
+const SimpleType = ['string', 'number', 'boolean', 'null']
+function isSimpleNode(node: any): node is SimpleNode {
+  return node && SimpleType.includes(node.type)
+}
+
+export { CodeRange, createRange, createError, isComplexNode, isSimpleNode }

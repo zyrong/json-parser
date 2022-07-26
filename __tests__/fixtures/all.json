@@ -2,6 +2,7 @@
   "empty_string": "",
   "string": "string",
   "\"":"\"",
+  "":"",
   "number": 0,
   "null": null,
   "false":false,
