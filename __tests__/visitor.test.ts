@@ -1,6 +1,7 @@
-import jsonParse from '../src/index'
+import jsonParse, { isSimpleNode } from '../src/index'
 
 const json = `{
+  "": "empty_key",
   "object": {
     "2": 123,
     "b": "123",
@@ -16,6 +17,17 @@ if (!visitor) {
   throw new Error('parse error')
 }
 
+it('visitor.get body', () => {
+  const node = visitor.get()
+  expect(node).toBe(visitor.body)
+})
+
+it('visitor.get empty_key', () => {
+  const node = visitor.get("")
+  if (isSimpleNode(node)) {
+    expect(node.value).toBe("empty_key")
+  }
+})
 
 it('visitor.get Nonexistent node', () => {
   const node = visitor.get('object.1')
@@ -24,7 +36,7 @@ it('visitor.get Nonexistent node', () => {
 
 it('visitor.get StringPath base', () => {
   const node = visitor.get('object.b')
-  if (visitor.isSimpleNode(node)) {
+  if (isSimpleNode(node)) {
     expect(node.type).toBe('string')
     expect(node.value).toBe('123')
   } else {
@@ -34,7 +46,7 @@ it('visitor.get StringPath base', () => {
 
 it('visitor.get StringPath number', () => {
   const node = visitor.get('object.2')
-  if (visitor.isSimpleNode(node)) {
+  if (isSimpleNode(node)) {
     expect(node.type).toBe('number')
     expect(node.value).toBe('123')
   } else {
@@ -44,7 +56,7 @@ it('visitor.get StringPath number', () => {
 
 it('visitor.get StringPath emptyKey', () => {
   const node = visitor.get('object..c')
-  if (visitor.isSimpleNode(node)) {
+  if (isSimpleNode(node)) {
     expect(node.type).toBe('number')
     expect(node.value).toBe('123')
   } else {
@@ -54,7 +66,7 @@ it('visitor.get StringPath emptyKey', () => {
 
 it('visitor.get ArrayPath base', () => {
   let node = visitor.get(["object", "", "c"])
-  if (visitor.isSimpleNode(node)) {
+  if (isSimpleNode(node)) {
     expect(node.type).toBe('number')
     expect(node.value).toBe('123')
   } else {
@@ -64,7 +76,7 @@ it('visitor.get ArrayPath base', () => {
 
 it('visitor.get ArrayPath dotKey', () => {
   const node = visitor.get(["object", ".d"])
-  if (visitor.isSimpleNode(node)) {
+  if (isSimpleNode(node)) {
     expect(node.type).toBe('number')
     expect(node.value).toBe('123')
   } else {
@@ -74,7 +86,7 @@ it('visitor.get ArrayPath dotKey', () => {
 
 it('visitor.get stringPath Array', () => {
   const node = visitor.get("array.0")
-  if (visitor.isSimpleNode(node)) {
+  if (isSimpleNode(node)) {
     expect(node.type).toBe('string')
     expect(node.value).toBe('2')
   } else {

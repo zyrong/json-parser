@@ -220,7 +220,7 @@ export default function parse(json: string): Visitor | null {
     if (char === '"') {
       const string = getStringLiteral(json, current);
       // 不带引号的key范围
-      const range = createRange(current + 1, current + string.length)
+      const range = createRange(current + 1, current + string.length + 1)
       tokens.push(createToken({
         type: TokenTypes.String,
         range,
@@ -235,7 +235,7 @@ export default function parse(json: string): Visitor | null {
       const value = getFixedLiteral(json, current, literal)
       tokens.push(createToken({
         type: TokenTypes.FixedLiteral,
-        range: createRange(current, current + literal.length - 1),
+        range: createRange(current, current + literal.length),
         value
       }))
       current += literal.length

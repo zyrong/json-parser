@@ -20,7 +20,7 @@ console.log(visitor.body) // 根node
   "key": null,
   "type": "object",
   "valueRange": {
-    "end": 45,
+    "end": 46,
     "start": 0
   },
   "parent": null,
@@ -29,11 +29,11 @@ console.log(visitor.body) // 根node
       "type": "array",
       "key": "array",
       "keyRange": {
-        "end": 11,
+        "end": 12,
         "start": 7
       },
       "valueRange": {
-        "end": 41,
+        "end": 42,
         "start": 15
       },
       "parent": ["Circular"],
@@ -44,7 +44,7 @@ console.log(visitor.body) // 根node
           "type": "string",
           "value": "string",
           "valueRange": {
-            "end": 29,
+            "end": 30,
             "start": 24
           }
         },
@@ -54,7 +54,7 @@ console.log(visitor.body) // 根node
           "type": "number",
           "value": "123",
           "valueRange": {
-            "end": 35,
+            "end": 36,
             "start": 33
           }
         }
@@ -66,13 +66,13 @@ console.log(visitor.body) // 根node
 
 
 // 字符串索引路径访问node
-console.log(visitor.get('array.0').value.code); // output: 'string'
+console.log(visitor.get('array.0').value); // output: 'string'
 
 // 访问不存在的node，返回undefined
-console.log(visitor.get('xxx').value.code);     // output: undefined
+console.log(visitor.get('xxx').value);     // output: undefined
 
 // 返回根node
-console.log(visitor.get('') === visitor.body);  // output: true
+console.log(visitor.get() === visitor.body);  // output: true
 ```  
 <br/>
 
@@ -135,7 +135,7 @@ const range = {
   start: 103,
   end: 109
 }
-const selectedString = packageJson.slice(range.start, range.end+1) // ts-node
+const selectedString = packageJson.slice(range.start, range.end) // ts-node
 // -------------------
 
 
@@ -143,7 +143,7 @@ import jsonParse from '@zyrong/json-parser'
 const visitor = jsonParse(packageJson)
 const node = visitor.get('dependencies')
 const depRange = node.valueRange
-if(range.start > depRange.start && range.end < depRange.end){
+if(range.start >= depRange.start && range.end <= depRange.end){
   console.log(selectedString+'在dependencies的范围内')
 }else{
   console.log(selectedString+'不在dependencies的范围内')
