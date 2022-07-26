@@ -1,11 +1,22 @@
 # json-parser
 
+## 0.3.0
+
+### Minor Changes
+
+- [#3](https://github.com/zyrong/json-parser/pull/3) [`c8e8081b`](https://github.com/zyrong/json-parser/commit/c8e8081b3d2f4556f9a129232dd739a62983d512) Thanks [@zyrong](https://github.com/zyrong)! - The coderange range is changed to end+1, Easier to use `string.slice(start, end)`
+  visitor.isSimpleNode/isComplexNode change to export
+  Fix the problem that the empty key node through visitor.get ('') cannot be obtained
+  Change the original visitor.get("") to visitor.get() to obtain the visitor.body node
+
 ## 0.2.0
 
 ### Minor Changes
 
 - [`29be165f`](https://github.com/zyrong/json-parser/commit/29be165fadd7c8e396fa7b412a2e0fea1a5e3047) Thanks [@zyrong](https://github.com/zyrong)! - visitor get logic refactor
+
 ### Node Definition breaking change
+
 - node.value.code => node.value
 - delete node.value.code
 - node.value.range => node.valueRange
