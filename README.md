@@ -4,14 +4,14 @@
 
 ## example
 ```js
-import jsonParse from '@zyrong/json-parser'
+import { parse } from '@zyrong/json-parser'
 
 const json = `{
   "array": [
     "string", 123
   ]
 }`
-const visitor = jsonParse(json)
+const visitor = parse(json)
 
 console.log(visitor.body) // 根node
 
@@ -105,10 +105,10 @@ interface SimpleNode {
 
 ## 错误json提示
 ```js
-import jsonParse from '@zyrong/json-parser'
+import { parse } from '@zyrong/json-parser'
 
 const json = `{"key":"value",}`  // 多了一个尾部逗号
-const visitor = jsonParse(json) // 抛出异常
+const visitor = parse(json) // 抛出异常
 // output:
 // {"key":"value",}
 //               ^
@@ -140,7 +140,7 @@ const selectedString = packageJson.slice(range.start, range.end) // ts-node
 
 
 import jsonParse from '@zyrong/json-parser'
-const visitor = jsonParse(packageJson)
+const visitor = parse(packageJson)
 const node = visitor.get('dependencies')
 const depRange = node.valueRange
 if(range.start >= depRange.start && range.end <= depRange.end){

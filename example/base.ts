@@ -1,4 +1,4 @@
-import jsonParse, { isSimpleNode } from "../src/index";
+import { parse, isSimpleNode } from "../src/index";
 
 const json = `{
   "": "empty_key",
@@ -26,7 +26,7 @@ const json = `{
 
 try {
   const startTime = Date.now()
-  const visitor = jsonParse(json);
+  const visitor = parse(json);
   console.log('耗时:', Date.now() - startTime, '\n');
 
   if (visitor) {

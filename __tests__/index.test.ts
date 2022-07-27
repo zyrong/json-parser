@@ -1,7 +1,7 @@
 import { resolve } from 'path';
 import { readdirSync } from 'fs'
 import fs from 'fs/promises'
-import jsonParse from '../src/index'
+import { parse } from '../src/index'
 
 const FIXTURES_DIR = resolve(__dirname, './fixtures')
 const TEST_TIMEOUT = 10000;
@@ -16,7 +16,7 @@ describe('fixtures', () => {
       const jsonBuf = await fs.readFile(jsonPath)
       const json = jsonBuf.toString()
 
-      const visitor = jsonParse(json)
+      const visitor = parse(json)
       if (visitor) {
         expect(visitor.body).toMatchSnapshot()
       } else {

@@ -1,4 +1,4 @@
-import jsonParse, { isSimpleNode } from "../src/index";
+import { parse, isSimpleNode } from "../src/index";
 
 const json = `{
   "a": {
@@ -8,7 +8,7 @@ const json = `{
     ".c": 123
   }
 }`
-const visitor = jsonParse(json)
+const visitor = parse(json)
 if (visitor) {
   const node1 = visitor.get('a..b')
 
@@ -17,7 +17,7 @@ if (visitor) {
     console.log(node1.value === '123');
   }
 
-  const node2 = visitor.get(['a','.c'])
+  const node2 = visitor.get(['a', '.c'])
   if (isSimpleNode(node2)) {
     console.log(node2.type === 'number');
     console.log(node2.value === '123');

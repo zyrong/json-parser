@@ -1,4 +1,4 @@
-import jsonParse, { isSimpleNode } from '../src/index'
+import { parse, isSimpleNode } from '../src/index'
 
 const json = `{
   "": "empty_key",
@@ -12,7 +12,7 @@ const json = `{
   },
   "array": ["2"]
 }`
-const visitor = jsonParse(json)
+const visitor = parse(json)
 if (!visitor) {
   throw new Error('parse error')
 }
