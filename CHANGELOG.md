@@ -1,5 +1,11 @@
 # json-parser
 
+## 0.4.0
+
+### Minor Changes
+
+- [`a2f5393c`](https://github.com/zyrong/json-parser/commit/a2f5393c87a4128baab615b4e2e7735f5894fd6e) Thanks [@zyrong](https://github.com/zyrong)! - parse default export change to Named export
+
 ## 0.3.0
 
 ### Minor Changes
