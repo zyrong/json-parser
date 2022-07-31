@@ -50,4 +50,5 @@ export {
   ComplexNode,
   SimpleNode,
   NodeType,
+  NodeKey
 }
