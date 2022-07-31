@@ -34,7 +34,7 @@ it('visitor.get Nonexistent node', () => {
   expect(node).toBe(undefined)
 })
 
-it('visitor.get StringPath base', () => {
+it('visitor.get StringPath basic', () => {
   const node = visitor.get('object.b')
   if (isSimpleNode(node)) {
     expect(node.type).toBe('string')
@@ -64,7 +64,7 @@ it('visitor.get StringPath emptyKey', () => {
   }
 })
 
-it('visitor.get ArrayPath base', () => {
+it('visitor.get ArrayPath basic', () => {
   let node = visitor.get(["object", "", "c"])
   if (isSimpleNode(node)) {
     expect(node.type).toBe('number')
