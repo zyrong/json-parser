@@ -12,7 +12,9 @@
     "test": "jest",
     "changeset": "changeset",
     "ci:version": "changeset version",
-    "ci:publish": "pnpm run build && pnpm run test && pnpm publish --no-git-checks"
+    "ci:publish": "pnpm run build && pnpm run test && pnpm publish --no-git-checks",
+    "eslint:fix": "eslint ./src --config ./.eslintrc.js --fix --ext .js,.ts",
+    "prettier": "prettier --config ./.prettierrc.js --write \"**/*.{js,ts}\""
   },
   "keywords": [
     "json",
@@ -41,7 +43,9 @@
     "@changesets/changelog-github": "^0.4.4",
     "@changesets/cli": "^2.22.0",
     "@commitlint/cli": "^16.2.1",
-    "@commitlint/config-conventional": "^16.2.1"
+    "@commitlint/config-conventional": "^16.2.1",
+    "@typescript-eslint/eslint-plugin": "^5.32.0",
+    "@typescript-eslint/parser": "^5.32.0"
   },
   "author": "zyrong",
   "publishConfig": {
@@ -50,8 +54,8 @@
   },
   "lint-staged": {
     "*.{js,ts}": [
-      "npm run prettier",
-      "npm run eslint:fix"
+      "npx eslint --config ./.eslintrc.js --fix",
+      "npx prettier --config ./.prettierrc.js --write"
     ]
   },
   "config": {
